@@ -3,16 +3,10 @@
  */
 "use strict";
 
-class Player {
-    enterNumber() {
-
-    }
-}
-
 class Game {
 
-    constructor(){
-        this.printer=new Printer();
+    constructor() {
+        this.printer = new Printer();
     }
 
     checkPlayerNumber(playerNumber, randomNumber) {
@@ -39,19 +33,24 @@ class Game {
         return result;
     }
 
+    checkValue(num) {
+        if (isNaN(num) || num.length !== 5) {
+            alert("Введите пятизначное число, например 12345");
+            return false;
+        }
+        return true;
+    }
+
     onGameEnd(bullsCount, randomLenght) {
         if (bullsCount === randomLenght) {
             this.printer.showEndGameMsg();
         }
     }
-
-
-
 }
 
-class Printer{
+class Printer {
 
-    showEndGameMsg(){
+    showEndGameMsg() {
         alert("Вы выиграли");
     }
 
@@ -111,14 +110,17 @@ reset.addEventListener('click', startAgain);
 
 function checkNumber() {
     let number = document.querySelector('.player-number').value;
-    game.checkPlayerNumber(number, array);
+    let val_check = game.checkValue(number);
+    if (val_check) {
+        game.checkPlayerNumber(number, array);
+    }
     document.querySelector('.player-number').value = '';
 }
 
-function startAgain(){
-let table = document.querySelector('.result');
+function startAgain() {
+    let table = document.querySelector('.result');
     let results = document.querySelectorAll('.table_result');
-    for(let i=0; i<results.length; i++) {
+    for (let i = 0; i < results.length; i++) {
         table.removeChild(results[i]);
     }
     document.querySelector('.player-number').value = '';
