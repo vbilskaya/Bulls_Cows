@@ -1,0 +1,45 @@
+.container{
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+    background: url('cow-and-bull.jpg') no-repeat 50% 50%;
+    height: 491px;
+    color: #1E824C;
+}
+p{
+    text-align: center;
+}
+
+form{
+    margin: 0 auto;
+    width: 800px;
+}
+
+.player-number{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.reset{
+    float: right;
+}
+
+.center{
+    margin: 0 auto;
+    width: 400px;
+}
+
+.result{
+    margin: 10px auto;
+    /*border: 3px solid #1E824C;*/
+    width: 300px;
+}
+.table_result{
+     border-bottom: 3px solid #1E824C;
+    text-align: center;
+ }
+.table_result:last-child{
+    border-bottom: none;
+}
