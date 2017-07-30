@@ -44,6 +44,7 @@ class Game {
     onGameEnd(bullsCount, randomLenght) {
         if (bullsCount === randomLenght) {
             this.printer.showEndGameMsg();
+            startAgain();
         }
     }
 }
